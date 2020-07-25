@@ -54,5 +54,36 @@ func TestDiff(t *testing.T) {
 			}
 		})
 	}
+}
 
+func TestPow(t *testing.T) {
+	testsets := map[string]struct {
+		i    int
+		j    int
+		want int
+	}{
+		"test1": {
+			i:    1,
+			j:    2,
+			want: 1,
+		},
+		"test2": {
+			i:    2,
+			j:    0,
+			want: 1,
+		},
+		"test3": {
+			i:    3,
+			j:    3,
+			want: 27,
+		},
+	}
+
+	for label, tt := range testsets {
+		t.Run(label, func(t *testing.T) {
+			if got := Pow(tt.i, tt.j); got != tt.want {
+				t.Errorf("got = %d, want %d", got, tt.want)
+			}
+		})
+	}
 }
