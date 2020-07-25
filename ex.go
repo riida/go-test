@@ -1,5 +1,7 @@
 package example
 
+import "fmt"
+
 func Sum(a, b int) int {
 	return a + b
 }
@@ -11,7 +13,7 @@ func Diff(a, b int) int {
 	return b - a
 }
 
-func Pow(a, b int) int {
+func PowerInt(a, b int) int {
 	if b == 0 {
 		return 1
 	}
@@ -20,4 +22,8 @@ func Pow(a, b int) int {
 		ret *= a
 	}
 	return ret
+}
+
+func Hello() {
+	fmt.Println("hello world.")
 }
